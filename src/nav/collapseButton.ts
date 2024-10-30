@@ -1,6 +1,7 @@
 import { App } from "obsidian";
 import { EventEmitter } from "events";
 
+
 export class CollapseButton extends EventEmitter  {
     private app: App;
     private parent: Element;
