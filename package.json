@@ -2,11 +2,14 @@
     "name": "hierarchical-common",
     "version": "0.0.1",
     "description": "Hierarchical common",
-    "main": "main.ts",
+    "main": "dist/main.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "/dist"
+      ],
     "scripts": {
         "dev": "node esbuild.config.mjs",
-        "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
-        "version": "node version-bump.mjs && git add manifest.json versions.json"
+        "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
     },
     "keywords": [],
     "author": "",
