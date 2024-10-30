@@ -9,16 +9,17 @@
       "noImplicitAny": true,
       "moduleResolution": "node",
       "importHelpers": true,
-      "isolatedModules": true,
       "strictNullChecks": true,
       "declaration": true,
+      "emitDeclarationOnly": true,
+      "declarationMap": true,
       "lib": [
         "DOM",
         "ES5",
         "ES6",
         "ES7"
       ],
-      "outDir": "./dist"
+      "outFile": "./dist/index.d.ts"
     },
     "include": [
       "src/**/*.ts"
