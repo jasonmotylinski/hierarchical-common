@@ -8,8 +8,9 @@
         "/dist"
       ],
     "scripts": {
-        "dev": "node esbuild.config.mjs",
-        "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+        "build:js": "node esbuild.config.mjs",
+        "build:types": "tsc --project tsconfig.json",
+        "build": "npm run build:js && npm run build:types"
     },
     "keywords": [],
     "author": "",

@@ -38,7 +38,7 @@ const context = await esbuild.context({
 	minify: prod,
 	sourcemap: prod ? false : "inline",
 	treeShaking: true,
-	outfile: "dist/main.js",
+	outfile: "dist/main.js"
 });
 
 

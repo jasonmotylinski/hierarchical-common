@@ -1,0 +1,21 @@
+import { EventEmitter } from "events";
+export class CollapseButton extends EventEmitter {
+    constructor(app, parent) {
+        super();
+        this.svgCollapse = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>';
+        this.app = app;
+        this.parent = parent;
+    }
+    render() {
+        this.button = this.parent.createDiv({ cls: "clickable-icon nav-action-button" });
+        this.button.innerHTML = this.svgCollapse;
+        this.button.addEventListener("click", (e) => {
+            this.button.classList.toggle('is-active');
+            this.emit("collapse-click", e);
+        });
+    }
+    isCollapsed() {
+        return this.button.hasClass("is-active");
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29sbGFwc2VCdXR0b24uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvbmF2L2NvbGxhcHNlQnV0dG9uLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBLE9BQU8sRUFBRSxZQUFZLEVBQUUsTUFBTSxRQUFRLENBQUM7QUFFdEMsTUFBTSxPQUFPLGNBQWUsU0FBUSxZQUFZO0lBSzVDLFlBQVksR0FBUSxFQUFFLE1BQWU7UUFDakMsS0FBSyxFQUFFLENBQUM7UUFISixnQkFBVyxHQUFDLG9lQUFvZSxDQUFDO1FBSXJmLElBQUksQ0FBQyxHQUFHLEdBQUMsR0FBRyxDQUFDO1FBQ2IsSUFBSSxDQUFDLE1BQU0sR0FBQyxNQUFNLENBQUM7SUFDdkIsQ0FBQztJQUVELE1BQU07UUFDRixJQUFJLENBQUMsTUFBTSxHQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsU0FBUyxDQUFDLEVBQUMsR0FBRyxFQUFFLGtDQUFrQyxFQUFDLENBQUMsQ0FBQztRQUM3RSxJQUFJLENBQUMsTUFBTSxDQUFDLFNBQVMsR0FBQyxJQUFJLENBQUMsV0FBVyxDQUFDO1FBRXZDLElBQUksQ0FBQyxNQUFNLENBQUMsZ0JBQWdCLENBQUMsT0FBTyxFQUFFLENBQUMsQ0FBQyxFQUFDLEVBQUU7WUFDdkMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxTQUFTLENBQUMsTUFBTSxDQUFDLFdBQVcsQ0FBQyxDQUFDO1lBQzFDLElBQUksQ0FBQyxJQUFJLENBQUMsZ0JBQWdCLEVBQUUsQ0FBQyxDQUFDLENBQUM7UUFDbkMsQ0FBQyxDQUFDLENBQUM7SUFDUCxDQUFDO0lBRUQsV0FBVztRQUNQLE9BQU8sSUFBSSxDQUFDLE1BQU0sQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDLENBQUM7SUFDN0MsQ0FBQztDQUNKIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQXBwIH0gZnJvbSBcIm9ic2lkaWFuXCI7XHJcbmltcG9ydCB7IEV2ZW50RW1pdHRlciB9IGZyb20gXCJldmVudHNcIjtcclxuXHJcbmV4cG9ydCBjbGFzcyBDb2xsYXBzZUJ1dHRvbiBleHRlbmRzIEV2ZW50RW1pdHRlciAge1xyXG4gICAgcHJpdmF0ZSBhcHA6IEFwcDtcclxuICAgIHByaXZhdGUgcGFyZW50OiBFbGVtZW50O1xyXG4gICAgcHJpdmF0ZSBzdmdDb2xsYXBzZT0nPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgd2lkdGg9XCIyNFwiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlLXdpZHRoPVwiMlwiIHN0cm9rZS1saW5lY2FwPVwicm91bmRcIiBzdHJva2UtbGluZWpvaW49XCJyb3VuZFwiIGNsYXNzPVwic3ZnLWljb24gbHVjaWRlLWxpc3RcIj48bGluZSB4MT1cIjhcIiB5MT1cIjZcIiB4Mj1cIjIxXCIgeTI9XCI2XCI+PC9saW5lPjxsaW5lIHgxPVwiOFwiIHkxPVwiMTJcIiB4Mj1cIjIxXCIgeTI9XCIxMlwiPjwvbGluZT48bGluZSB4MT1cIjhcIiB5MT1cIjE4XCIgeDI9XCIyMVwiIHkyPVwiMThcIj48L2xpbmU+PGxpbmUgeDE9XCIzXCIgeTE9XCI2XCIgeDI9XCIzLjAxXCIgeTI9XCI2XCI+PC9saW5lPjxsaW5lIHgxPVwiM1wiIHkxPVwiMTJcIiB4Mj1cIjMuMDFcIiB5Mj1cIjEyXCI+PC9saW5lPjxsaW5lIHgxPVwiM1wiIHkxPVwiMThcIiB4Mj1cIjMuMDFcIiB5Mj1cIjE4XCI+PC9saW5lPjwvc3ZnPic7XHJcbiAgICBwcml2YXRlIGJ1dHRvbiA6SFRNTERpdkVsZW1lbnQ7XHJcbiAgICBjb25zdHJ1Y3RvcihhcHA6IEFwcCwgcGFyZW50OiBFbGVtZW50KSB7XHJcbiAgICAgICAgc3VwZXIoKTtcclxuICAgICAgICB0aGlzLmFwcD1hcHA7XHJcbiAgICAgICAgdGhpcy5wYXJlbnQ9cGFyZW50O1xyXG4gICAgfVxyXG5cclxuICAgIHJlbmRlcigpe1xyXG4gICAgICAgIHRoaXMuYnV0dG9uPXRoaXMucGFyZW50LmNyZWF0ZURpdih7Y2xzOiBcImNsaWNrYWJsZS1pY29uIG5hdi1hY3Rpb24tYnV0dG9uXCJ9KTtcclxuICAgICAgICB0aGlzLmJ1dHRvbi5pbm5lckhUTUw9dGhpcy5zdmdDb2xsYXBzZTtcclxuXHJcbiAgICAgICAgdGhpcy5idXR0b24uYWRkRXZlbnRMaXN0ZW5lcihcImNsaWNrXCIsIChlKT0+eyBcclxuICAgICAgICAgICAgdGhpcy5idXR0b24uY2xhc3NMaXN0LnRvZ2dsZSgnaXMtYWN0aXZlJyk7XHJcbiAgICAgICAgICAgIHRoaXMuZW1pdChcImNvbGxhcHNlLWNsaWNrXCIsIGUpO1xyXG4gICAgICAgIH0pO1xyXG4gICAgfVxyXG5cclxuICAgIGlzQ29sbGFwc2VkKCk6IGJvb2xlYW57XHJcbiAgICAgICAgcmV0dXJuIHRoaXMuYnV0dG9uLmhhc0NsYXNzKFwiaXMtYWN0aXZlXCIpO1xyXG4gICAgfSAgIFxyXG59XHJcbiJdfQ==
