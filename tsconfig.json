@@ -18,7 +18,7 @@
         "ES6",
         "ES7"
       ],
-      "outFile": "./dist/index.d.ts"
+      "outFile": "./dist/hierarchical-common.d.ts"
     },
     "include": [
       "src/**/*.ts"

@@ -2,16 +2,8 @@
     "name": "hierarchical-common",
     "version": "0.0.1",
     "description": "Hierarchical common",
-    "main": "",
-    "types": "dist/hierarchical-common.d.ts",
-    "files": [
-        "/dist"
-      ],
-    "scripts": {
-        "build:js": "node esbuild.config.mjs",
-        "build:types": "tsc --project tsconfig.json",
-        "build": "npm run build:js && npm run build:types"
-    },
+    "main": "hierarchical-common.js",
+    "types": "hierarchical-common.d.ts",
     "keywords": [],
     "author": "",
     "license": "MIT",

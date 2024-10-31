@@ -1,4 +1,4 @@
-import { App } from "obsidian";
+import { App, SearchMatches } from "obsidian";
 import { EventEmitter } from "events";
 
 
@@ -26,4 +26,18 @@ export class CollapseButton extends EventEmitter  {
     isCollapsed(): boolean{
         return this.button.hasClass("is-active");
     }   
+}
+
+
+export interface TreeNode {
+    name: string;
+    count: number;
+    children: TreeNode[];
+	content: string;
+    references: ContentReference[];
+}
+
+export interface ContentReference {
+    searchMatches: SearchMatches;
+	path: string;
 }
