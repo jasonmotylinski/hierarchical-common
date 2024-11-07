@@ -2,7 +2,7 @@
     "name": "hierarchical-common",
     "version": "0.0.1",
     "description": "Hierarchical common",
-    "main": "",
+    "main": "dist/hierarchical-common.js",
     "types": "dist/hierarchical-common.d.ts",
     "files": [
         "/dist"
