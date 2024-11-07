@@ -21,4 +21,16 @@ declare module "hierarchical-common" {
         searchMatches: SearchMatches;
         path: string;
     }
+    export interface Point {
+        line: number;
+        col: number;
+        offset: number;
+    }
+    export interface Position {
+        start: Point;
+        end: Point;
+    }
+    export interface BacklinkReference {
+        position: Position;
+    }
 }
